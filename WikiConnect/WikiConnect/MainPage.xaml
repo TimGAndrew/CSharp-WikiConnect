@@ -1,0 +1,150 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WikiConnect"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:DataContext="using:WikiConnect.DataContext"
+    x:Class="WikiConnect.MainPage"
+    mc:Ignorable="d" DataContext="{StaticResource mData}" KeyDown="Page_KeyDown" Loaded="Page_Loaded">
+
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush
+                Stretch="Fill" 
+                ImageSource="Images/WikiConnectBackground.png"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+				Width="0.2*"/>
+            <ColumnDefinition
+				Width="0.6*"/>
+            <ColumnDefinition
+				Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="0.1*"
+				MinHeight="54"/>
+            <RowDefinition
+				Height="0.1*"/>
+            <RowDefinition
+                Height="0.6*"/>
+            <RowDefinition 
+                Height="0.1*"/>
+        </Grid.RowDefinitions>
+
+        <Image 
+            x:Name="Logo"
+            Grid.Column="0"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="20,20,0,0"
+            Source="Images/WikiConnectLogo.png" 
+            Stretch="Uniform"/>
+
+        <Button 
+            x:Name="AboutButton"
+            Grid.Column="2"
+            Height="50"
+            Width="50"
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Background="#33000000"
+            Foreground="#FFE6E6E6"
+            AutomationProperties.HelpText="About this program..." 
+            ToolTipService.ToolTip="About this program..." Click="AboutButton_Click" IsTabStop="False">
+            <SymbolIcon
+                Symbol="Help"/>
+        </Button>
+
+        <Grid
+            Grid.Column="1"
+            Grid.Row="2" Background="#C5163873" CornerRadius="20" Margin="32">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="0.1*"/>
+                <ColumnDefinition
+				    Width="0.8*"/>
+                <ColumnDefinition
+				    Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="0.1*"/>
+                <RowDefinition
+                    MinHeight="80"
+				    Height="0.1*"/>
+                <RowDefinition
+                    
+                    Height="0.2*"/>
+                <RowDefinition 
+                    Height="0.2*"/>
+                <RowDefinition
+                    Height="0.1*"/>
+                <RowDefinition
+				    Height="0.3*"/>
+                <RowDefinition
+                    Height="0.1*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="Six Degrees of Wikipedia Search"
+                TextAlignment="Center"
+                TextWrapping="WrapWholeWords"
+                Foreground="#FFE6E6E6"
+                FontSize="28"
+                Margin="0"
+                />
+            <TextBox
+                x:Name="StartQuery" 
+                Grid.Row="2"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Text="{Binding StartArticle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="0"
+                PlaceholderText="Enter start article..." RequestedTheme="Dark"/>
+
+            <TextBox 
+                x:Name="EndQuery"
+                Grid.Row="3"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Text="{Binding EndArticle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="0"
+                PlaceholderText="Enter destination article..." RequestedTheme="Dark"/>
+
+            <Button
+                x:Name="SearchButton"
+                Grid.Row="5"
+                Grid.Column="1"
+                Margin="12"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                AutomationProperties.HelpText="Search for connections..." 
+                ToolTipService.ToolTip="Search for connections..." BorderBrush="Black" RequestedTheme="Dark" Command="{Binding SubmitCommand, Mode=TwoWay}" >
+                <SymbolIcon
+                    x:Name="SearchIcon"
+                    Symbol="Find"
+                    Foreground="Black"/>
+            </Button>
+        </Grid>
+
+        <Canvas x:Name="LoadingCanvas" Grid.ColumnSpan="3" Grid.RowSpan="4">
+            <Grid Width="{Binding ActualWidth, ElementName=LoadingCanvas}" Height="{Binding ActualHeight, ElementName=LoadingCanvas}" Visibility="{Binding PanelVisibility}" Background="#99000000" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ProgressRing HorizontalAlignment="Center" VerticalAlignment="Center" Height="146" Width="150" Foreground="White" IsActive="{Binding IsLoading}"/>
+            </Grid>
+        </Canvas>
+
+    </Grid>
+</Page>

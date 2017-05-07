@@ -1,0 +1,220 @@
+﻿<Page
+    x:Class="WikiConnect.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WikiConnect"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 94576aa4ba2ea3f7cb12988fbf6973c42fe39abb
+        
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" 
+                        ImageSource="Images/WikiConnectLogo1.png"/>
+        </Grid.Background>
+        
+        <Button x:Name="exitButton" 
+                Content="X" 
+                Height="54" 
+                Width="51"
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Right"
+                Background="#33000000" 
+                FontFamily="Sylfaen" 
+                FontSize="36"/>
+        
+        <Button x:Name="aboutButton" 
+                Content="?&#xD;&#xA;" 
+                Height="54" 
+                Width="51"
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Right"
+                Background="#33000000" 
+                FontFamily="Sylfaen" 
+                Margin="0,0,51,0"
+                FontSize="36"/>
+<<<<<<< HEAD
+=======
+
+            <!--The center block-->
+        <GridView x:Name="searchBox" 
+                  Background="#C5163873" 
+                  HorizontalAlignment="center"
+                  VerticalAlignment="center"
+                  BorderThickness="10"  Width="756" Height="600">
+            <TextBox x:Name="startQuery" 
+                     Width="640"
+                     Height="100" 
+                     TextWrapping="Wrap" 
+                     TextAlignment="Center"
+                     Text="" 
+                     Margin="40" 
+                     FontFamily="Sylfaen" 
+                     FontSize="56"
+                     PlaceholderText="Beginning Query..."/>
+            <TextBox x:Name="endQuery" 
+                     Width="640"
+                     Height="100" 
+                     TextWrapping="Wrap" 
+                     Text="" 
+                     Margin="40" 
+                     FontFamily="Sylfaen" 
+                     FontSize="56"
+                     PlaceholderText="Destination Query..."/>
+            <Button x:Name="searchButton" 
+                    Content="Search" 
+                    HorizontalAlignment="Stretch" 
+                    Height="100" 
+                    VerticalAlignment="Stretch" 
+                    Width="680" 
+                    Foreground="#FFA2C1DA" 
+                    FontFamily="Sylfaen" 
+                    FontSize="48" 
+                    FontWeight="Bold" 
+                    Margin="40"/>
+        </GridView>
+        
+>>>>>>> 94576aa4ba2ea3f7cb12988fbf6973c42fe39abb
+
+            <!--The center block-->
+        <GridView x:Name="searchBox" 
+                  Background="#C5163873" 
+                  HorizontalAlignment="center"
+                  VerticalAlignment="center"
+                  BorderThickness="10"  Width="756" Height="600">
+            <TextBox x:Name="startQuery" 
+                     Width="640"
+                     Height="100" 
+                     TextWrapping="Wrap" 
+                     TextAlignment="Center"
+                     Text="" 
+                     Margin="40" 
+                     FontFamily="Sylfaen" 
+                     FontSize="56"
+                     PlaceholderText="Beginning Query..."/>
+            <TextBox x:Name="endQuery" 
+                     Width="640"
+                     Height="100" 
+                     TextWrapping="Wrap" 
+                     Text="" 
+                     Margin="40" 
+                     FontFamily="Sylfaen" 
+                     FontSize="56"
+                     PlaceholderText="Destination Query..."/>
+            <Button x:Name="searchButton" 
+                    Content="Search" 
+                    HorizontalAlignment="Stretch" 
+                    Height="100" 
+                    VerticalAlignment="Stretch" 
+                    Width="680" 
+                    Foreground="#FFA2C1DA" 
+                    FontFamily="Sylfaen" 
+                    FontSize="48" 
+                    FontWeight="Bold" 
+                    Margin="40"/>
+        </GridView>
+        
+>>>>>>> 94576aa4ba2ea3f7cb12988fbf6973c42fe39abb
+
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" 
+                        ImageSource="Images/WikiConnectLogo1.png"/>
+        </Grid.Background>
+
+        <!--The Top Right Buttons-->
+        <Button 
+            x:Name="ExitButton" 
+            Grid.Column="1"
+            Height="54" 
+            Width="51"
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Background="#33000000" 
+            AutomationProperties.HelpText="Exit Program"
+            ToolTipService.ToolTip="Exit Program">
+            <SymbolIcon 
+                Symbol="Cancel"/>
+        </Button>
+
+        <Button 
+            x:Name="AboutButton" 
+            Grid.Column="1"           
+            Height="54" 
+            Width="51"
+            Margin="0,0,51,0"
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Background="#33000000"             
+            AutomationProperties.HelpText="About WikiConnect"
+            ToolTipService.ToolTip="About WikiConnect">
+            <SymbolIcon 
+                Symbol="Help"/>
+        </Button>
+
+        <!--The center block-->
+        <GridView 
+            x:Name="SearchBox" 
+            Background="#C5163873" 
+            HorizontalAlignment="center"
+            VerticalAlignment="center"
+            BorderThickness="10"  
+            Width="750">
+
+            <TextBox
+                x:Name="StartQueryBox" 
+                Width="650"
+                Height="90" 
+                Margin="50" 
+                TextAlignment="Center"
+                Text="" 
+                FontFamily="Trebuchet MS"
+                FontSize="50"
+                AutomationProperties.HelpText="Enter A Beginning Query"
+                ToolTipService.ToolTip="Enter A Beginning Query" 
+                PlaceholderText="Beginning Query..."/>
+
+            <TextBox 
+                x:Name="EndQueryBox" 
+                Width="650"
+                Height="90" 
+                TextAlignment="Center" 
+                Text="" 
+                Margin="50" 
+                FontFamily="Trebuchet MS" 
+                FontSize="50"
+                AutomationProperties.HelpText="Enter A Destination Query"
+                ToolTipService.ToolTip="Enter A Destination Query" 
+                PlaceholderText="Destination Query..."/>
+
+            <Button 
+                x:Name="SearchButton" 
+                Height="90" 
+                Width="200"
+                Margin="50"
+                Foreground="#FFA2C1DA" 
+                FontFamily="Trebuchet MS"  
+                FontSize="50" 
+                FontWeight="Bold" 
+                AutomationProperties.HelpText="Search For Connections"
+                ToolTipService.ToolTip="Search For Connections">
+                <SymbolIcon 
+                    Symbol="Find" 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="-33,-44,0,15" Height="29" Width="23" >
+                    <SymbolIcon.RenderTransform>
+                        <CompositeTransform 
+                            ScaleX="3" ScaleY="3"/>
+                    </SymbolIcon.RenderTransform>
+                </SymbolIcon>
+            </Button>
+
+        </GridView>
+    </Grid>
+</Page>
